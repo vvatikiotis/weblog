@@ -25,6 +25,10 @@
     - [Selector functions](#selector-functions)
     - [react-redux: `connect`, `mapState` and `mapDispatch`](#react-redux-connect-mapstate-and-mapdispatch)
   - [Philosophy and Variations in Usage](#philosophy-and-variations-in-usage)
+    - [Slice reducers vs all update together](#slice-reducers-vs-all-update-together)
+    - [Action Semantics](#action-semantics)
+  - [Reducer Variations](#reducer-variations)
+    - [Cursors](#cursors)
 
 <!-- /TOC -->
 
@@ -418,3 +422,44 @@ the store functions that are expose to nested components.
 
 ## Philosophy and Variations in Usage
 
+### Slice reducers vs all update together
+
+Can't see what  parts of the store an action touches? Search for the action constant
+throughout the project.
+
+### Action Semantics
+
+Past tense (e.g. `LOADED_THING`) can be seen as an event, present tense (e.g. `LOAD_THING`) as a command. This ties to Event
+Sourcing and CQRS.
+
+There is an implicit contract between the code that dispatch the action and some
+portion of the reducer logic. If the action is not formatted correctly then the
+reducer will either ignore it or break. In that sense Redux is just like any other
+pub-sub system. Dispatching action is like calling a function at a distance (RPC)
+and if you don't provide the right parameters to the code at the other end, it won't
+work.
+
+There is a third alternative, using nouns (e.g. `THING_LOAD`).
+
+Don't name or use action creators as setters.
+> The point is to decouple “what happened” from “how the state changes”. “Setter” action creators defeat the purpose, conflating the two.
+
+
+
+## Reducer Variations
+
+### Cursors
+
+> Read cursors can be implemented on top of Redux very easily. Just listen to root
+changes, select a specific path and compare if the reference has changed since the last time.
+
+> Write cursors seem to go against the inetnded spirit of "semantically meaningful
+actions that can be traced through the system".
+
+
+
+... the end. The article itself ends with OOP/FP Variations and and some final
+thoughts. Go read it. In fact, read the whole article, it's a treasure trove.
+In fact, [Mark's Dev Blog](http://blog.isquaredsoftware.com/) is a must read.
+
+Thanks
