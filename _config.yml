@@ -1,0 +1,8 @@
+title: Weblog
+description: 
+google_analytics: UA-10524718-5
+show_downloads: true
+theme: jekyll-theme-hacker
+
+gems:
+  - jekyll-mentions
