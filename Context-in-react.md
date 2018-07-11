@@ -19,3 +19,5 @@ Context provides us a way to do away with this. We no longer have to clone eleme
 in order to pass them any props we need. Instead, we put any props we need in a
 parent context and retrieve it from _any_ child, in any depth we need, from `context`
 prop.
+
+* Context can include anything, i.e. props, state, computed values, even handlers.

@@ -15,7 +15,7 @@ Title: On passing state
 That way `state` tells us out component state, at any point in time.
 
 To move further into this technique, we can abstract all lifecycle methods and
-imperative stuff into another component which renders nothing, `null`, and keep
+imperative stuff into another, inner, component which renders nothing, `null`, and keep
 the state into the driving, outer component. The outer component is then
 responsible for rendering the first component.
 
