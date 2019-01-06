@@ -5,11 +5,11 @@ Date: 23 November 2017
 Title: On passing state
 ---
 
-# Handling imperative stuff in react
+# Handling imperative stuff in React
 
-* Use event handlers to just update component state.
-* Move all imperative logic out of lifecycle methods.
-* Use `componentDidMount` and `componentDidUpdate` to invoke any imperative
+- Use event handlers to just update component state.
+- Move all imperative logic out of lifecycle methods.
+- Use `componentDidMount` and `componentDidUpdate` to invoke any imperative
   stuff.
 
 That way `state` tells us out component state, at any point in time.
