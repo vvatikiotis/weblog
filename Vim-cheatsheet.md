@@ -8,3 +8,5 @@
 - c (change), cw = change next word
 - dw delete next word
 - D delete rest of line
+
+[Ben Awad YouTube video](https://www.youtube.com/watch?v=IiwGbcd8S7I&t=3045s)
